@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Fundus AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    /* Center the login card */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at top left, #00264d, #00111a);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      width: 360px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .login-card h1 {
+      color: #00c3ff;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .login-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .login-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .login-card input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .login-card button {
+      width: 100%;
+      background: #00c3ff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .login-card button:hover {
+      background: #009ad9;
+      transform: scale(1.03);
+    }
+
+    .login-card a {
+      color: #00c3ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .login-card a:hover {
+      color: #009ad9;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h1>Fundus AI</h1>
+    <p>Sign in to start detection</p>
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="••••••••" required>
+
+      <button type="submit">Sign In</button>
+    </form>
+
+    <p style="margin-top: 20px; font-size: 0.9rem;">
+      Don’t have an account?
+      <a href="{{ url_for('register') }}">Register here</a>
+    </p>
+  </div>
+
+</body>
+</html>

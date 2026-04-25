@@ -1,0 +1,44 @@
+# 🧠 Fundus AI Project - .gitignore
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignore virtual environment
+.venv/
+env/
+venv/
+
+# Ignore model files (large)
+*.h5
+*.hdf5
+*.pb
+*.tflite
+
+# Ignore uploaded and temporary files
+.venv/
+static/uploads/
+static/heatmaps/
+
+# Ignore editor and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ignore environment and configuration files
+.env
+*.config
+*.json
+
+# Ignore any local dataset folders (optional)
+dataset/
+data/
+
+# Ignore temporary build or output folders
+build/
+dist/
+*.egg-info/

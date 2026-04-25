@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Fundus AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <h2>🩺 Fundus AI</h2>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('register') }}" class="active">Register</a></li>
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('predict') }}">Predict</a></li>
+    </ul>
+  </nav>
+
+  <!-- Register Form -->
+  <div class="form-container">
+    <h2 style="color:#00c3ff;">Create Your Account</h2>
+    <p style="color:#ccc; margin-bottom:20px;">Join Fundus AI to access AI-powered detection</p>
+
+    <form method="POST" action="{{ url_for('register') }}">
+      <input type="text" name="username" placeholder="Enter Username" required>
+      <input type="email" name="email" placeholder="Enter Email" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <p style="margin-top:15px; color:#bbb;">
+      Already have an account? 
+      <a href="{{ url_for('login') }}" style="color:#00c3ff; text-decoration:none;">Login here</a>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Fundus AI — Secure AI Access for Retinal Health
+  </footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
